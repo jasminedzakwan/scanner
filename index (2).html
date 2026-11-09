@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pemeriksaan Mata Gratis 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<style>
+:root{--blue:#0055ff;--dark:#003cb9;--yellow:#fcef0f;--ink:#17243e;--muted:#6b7890;--line:#e2e9f4;--bg:#f4f7fd;
+--ok:#09855f;--ok-bg:#e6f6ef;--err:#d2424b;--err-bg:#fdecee;--warn:#8a5d00;--warn-bg:#fff6cc;--warn-line:#f0c419}
+*{box-sizing:border-box}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+[hidden]{display:none!important}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.busy button,.busy input,.busy select{pointer-events:none;opacity:.55}
+.wrap{max-width:480px;margin:0 auto;padding:14px}
+.top{background:var(--blue);color:#fff;padding:14px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.top b{display:block;font-size:16px}.top small{color:#cfe0ff;font-weight:500}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--yellow);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:22px;flex:none}
+.brand{display:flex;gap:12px;align-items:center}
+.ghost{background:transparent;border:1.5px solid #ffffff80;color:#fff;border-radius:10px;padding:8px 12px;font-weight:700}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.btn{width:100%;min-height:50px;border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:800}
+.btn:hover{background:var(--dark)}
+.control{width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-weight:600}
+label{display:block;font-weight:700;margin-bottom:6px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tab{min-height:56px;border:1.5px solid var(--line);background:#fff;border-radius:12px;font-weight:700;padding:6px}
+.tab[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.desc{margin:10px 2px 0;color:var(--muted)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.opt{min-height:60px;border-radius:12px;border:2.5px solid var(--line);background:#fff;font-weight:800;font-size:17px}
+.opt[data-v=Normal][aria-pressed=true]{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt[data-v=Bermasalah][aria-pressed=true]{background:var(--err);border-color:var(--err);color:#fff}
+#reader{width:100%;border-radius:12px;overflow:hidden;background:#0d1626;min-height:200px}
+.row{display:flex;gap:8px}.row .btn{width:auto;padding:0 18px}
+#hasil{border:3px solid var(--line);border-radius:18px;padding:18px;text-align:center;background:#fff}
+#hasil h2{margin:6px 0 6px;font-size:24px;line-height:1.25}
+#hasil p{margin:0;font-size:16px}
+#hasil .ic{font-size:44px;line-height:1}
+#hasil .info{margin-top:12px;padding-top:12px;border-top:1px solid #0000001f;font-weight:700;font-size:17px}
+#hasil.success{background:var(--ok-bg);border-color:var(--ok);color:#06603f}
+#hasil.error{background:var(--err-bg);border-color:var(--err);color:#a3232c}
+#hasil.warning{background:var(--warn-bg);border-color:var(--warn-line);color:var(--warn)}
+#hasil.idle{color:var(--muted)}
+.err{color:#a3232c;background:var(--err-bg);border-radius:10px;padding:10px 12px;margin:0 0 12px}
+.top b,#hasil h2,.lg h1,.lg h2{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.lg{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#fff}
+.lg-brand{position:relative;overflow:hidden;background:var(--blue);color:#fff;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.lg-brand:before{content:'';position:absolute;width:520px;height:520px;right:-200px;bottom:-190px;border:100px solid #ffffff1a;border-radius:50%}
+.lg-brand:after{content:'';position:absolute;width:200px;height:200px;right:60px;top:70px;background:var(--yellow);border-radius:50%}
+.lg-brand>*{position:relative;z-index:1}
+.lg-logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.03em;font-size:14px}
+.lg-tag{font-size:11px;font-weight:800;letter-spacing:.2em;margin:0 0 18px}
+.lg h1{font-size:clamp(40px,5vw,68px);line-height:1.08;letter-spacing:-.05em;margin:0 0 20px;font-weight:800}
+.lg h1 em{color:var(--yellow);font-style:normal}
+.lg-sub{max-width:380px;line-height:1.65;color:#dfe9ff;margin:0}
+.lg-foot{display:flex;align-items:center;gap:10px;font-size:13px;color:#bdd2ff}.lg-foot i{width:24px;height:2px;background:var(--yellow)}
+.lg-side{display:flex;align-items:center;justify-content:center;padding:40px 28px}
+.lg-card{width:100%;max-width:430px}
+.lg-label{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--blue);margin:0 0 12px}
+.lg h2{font-size:36px;letter-spacing:-.045em;margin:0 0 10px;line-height:1.2}
+.lg-desc{color:var(--muted);line-height:1.7;margin:0 0 26px}
+.pw{position:relative;margin-bottom:18px}.pw .control{padding-right:100px}
+.pw button{position:absolute;right:10px;top:9px;border:0;background:none;color:var(--blue);font-weight:800;padding:8px}
+.btn.go{border-radius:14px;box-shadow:0 8px 18px #0055ff2e}
+.lg-copy{text-align:center;color:#9aa5b8;font-size:12px;margin:22px 0 0}
+@media(max-width:820px){.lg{grid-template-columns:1fr}.lg-brand{padding:28px 24px}.lg-brand:after{width:110px;height:110px;right:24px;top:24px}.lg h1{font-size:40px}.lg-foot{display:none}.lg-side{padding:28px 20px 40px}}
+.eye{border:1px solid var(--line);border-radius:12px;padding:10px;margin:10px 0}.eye h3{margin:0 0 8px;font-size:15px}.pair{display:grid;grid-template-columns:1.2fr 1fr;gap:8px}.btn.alt{background:#e9eef8;color:var(--ink)}
+</style>
+</head>
+<body>
+
+<section id="login" class="lg">
+  <div class="lg-brand">
+    <div class="lg-logo"><div class="logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg></div>AL-IZHAR × LIONS CLUB</div>
+    <div>
+      <p class="lg-tag">PROGRAM KESEHATAN &amp; KEPEDULIAN</p>
+      <h1>Pemeriksaan<br><em>Mata Gratis.</em></h1>
+      <p class="lg-sub">Kerjasama Al-Izhar dengan LIONS Club. Satu sistem terintegrasi untuk registrasi, screening, pemeriksaan, dan distribusi.</p>
+    </div>
+    <div class="lg-foot"><i></i>Melihat lebih baik, melangkah lebih jauh.</div>
+  </div>
+  <div class="lg-side"><div class="lg-card">
+    <p class="lg-label">AKSES PETUGAS</p>
+    <h2>Selamat datang.</h2>
+    <p class="lg-desc">Masukkan ID pengguna dan password sesuai penugasan pos Anda.</p>
+    <p id="loginErr" class="err" hidden></p>
+    <label for="user">ID pengguna</label>
+    <div class="pw"><input id="user" class="control" autocomplete="off" autocapitalize="none" placeholder="Masukkan ID pengguna"></div>
+    <label for="pin">Password</label>
+    <div class="pw"><input id="pin" class="control" type="password" autocomplete="off" placeholder="Masukkan password"><button id="btnLihat" type="button">Lihat</button></div>
+    <button id="btnLogin" class="btn go" type="button">Masuk ke Aplikasi →</button>
+    <p class="lg-copy">© Al-Izhar × LIONS Club · Pemeriksaan Mata Gratis</p>
+  </div></div>
+</section>
+
+<section id="app" hidden>
+  <header class="top"><div class="wrap">
+    <div class="brand"><div class="logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg></div><div><b>Pemeriksaan Mata Gratis</b><small id="posNama">Pos 1 · Registrasi</small></div></div>
+    <button id="btnKeluar" class="ghost" type="button">Keluar</button>
+  </div></header>
+
+  <main class="wrap">
+    <div class="card">
+      <div class="tabs" role="group" aria-label="Pilih pos">
+        <button class="tab" data-pos="1" type="button">Pos 1<br>Registrasi</button>
+        <button class="tab" data-pos="2" type="button">Pos 2<br>Screening</button>
+        <button class="tab" data-pos="3" type="button">Pos 3<br>Refraksionis</button>
+        <button class="tab" data-pos="4" type="button">Pos 4<br>Merchandise</button>
+      </div>
+      <p id="desc" class="desc"></p>
+      <div id="choice" class="choice" hidden>
+        <button class="opt" data-v="Normal" type="button" aria-pressed="false">Normal</button>
+        <button class="opt" data-v="Bermasalah" type="button" aria-pressed="false">Bermasalah</button>
+      </div>
+    </div>
+
+    <div id="hasil" class="idle" role="status" aria-live="polite">
+      <div class="ic">📷</div><h2>Siap memindai</h2><p>Arahkan kamera ke QR peserta.</p>
+    </div>
+
+    <div id="form" class="card" hidden><b id="formNama"></b><div class="eye"><h3>Mata kanan</h3><div class="pair"><select id="hk" class="control" aria-label="Hasil Mata kanan"><option value="">Pilih hasil</option><option>Minus</option><option>Plus</option><option>Silinder</option><option>Normal</option></select><input id="nk" class="control" inputmode="decimal" autocomplete="off" placeholder="Nilai, mis. 1.50" aria-label="Nilai Mata kanan"></div></div><div class="eye"><h3>Mata kiri</h3><div class="pair"><select id="hl" class="control" aria-label="Hasil Mata kiri"><option value="">Pilih hasil</option><option>Minus</option><option>Plus</option><option>Silinder</option><option>Normal</option></select><input id="nl" class="control" inputmode="decimal" autocomplete="off" placeholder="Nilai, mis. 1.50" aria-label="Nilai Mata kiri"></div></div><div class="row"><button id="btnSimpan" class="btn" type="button">Simpan hasil</button><button id="btnBatal" class="btn alt" type="button">Batal</button></div></div>
+
+    <div class="card" style="margin-top:12px">
+      <div id="reader"></div>
+      <button id="btnKamera" class="btn" type="button" style="margin-top:12px" hidden>Buka kamera</button>
+      <label for="cam" style="margin-top:12px">Kamera</label>
+      <select id="cam" class="control">
+        <option value="environment">Kamera Belakang</option>
+        <option value="user">Kamera Depan</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="manual">QR rusak? Ketik ID peserta</label>
+      <div class="row">
+        <input id="manual" class="control" inputmode="numeric" autocomplete="off" placeholder="Contoh: 0001">
+        <button id="btnManual" class="btn" type="button">Cek</button>
+      </div>
+    </div>
+  </main>
+</section>
+
+<script>
+var POS = {
+  1: ['Registrasi', 'Scan QR peserta untuk mencatat kehadiran.'],
+  2: ['Screening', 'Pilih hasil screening dulu, lalu scan QR peserta.'],
+  3: ['Refraksionis', 'Scan QR peserta rujukan, lalu isi hasil mata kanan dan kiri.'],
+  4: ['Merchandise', 'Scan QR untuk mencatat pengambilan merchandise.']
+};
+var ICON = {success: '✅', error: '⛔', warning: '⚠️'};
+var formId = '', user = '', pin = '', pos = 1, hasil = '', busy = false, qr = null, lastId = '', lastAt = 0, audio = null, izin = null;
+var $ = function (id) { return document.getElementById(id); };
+var pesan = function (e) { return String((e && e.message) || e).replace(/^Error:\s*/, ''); };
+
+// Alamat web app Apps Script (hasil Deploy). Ganti jika Anda membuat deployment baru.
+var API_URL = 'https://script.google.com/macros/s/AKfycbzR0J4_lnFPFUumLLon9FpfHS7k2iNUT6r2LYY8aTdmhdZtpvetNLa6o_xICcRatkEB/exec';
+
+// Kirim perintah ke Apps Script. Tanpa header khusus -> permintaan "sederhana", tidak butuh preflight CORS.
+function panggil(aksi, data) {
+  var ctl = window.AbortController ? new AbortController() : null;
+  var timer = ctl ? setTimeout(function () { ctl.abort(); }, 30000) : 0;
+  return fetch(API_URL, {method: 'POST', body: JSON.stringify({aksi: aksi, data: data}), signal: ctl ? ctl.signal : undefined})
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || 'Terjadi kesalahan di server.');
+      return j.data;
+    }, function (e) {
+      if (e && e.name === 'AbortError') throw new Error('Server terlalu lama menjawab.');
+      if (e && e.name === 'SyntaxError') throw new Error('Jawaban server tidak sesuai. Pastikan akses deployment diatur "Siapa saja".');
+      throw new Error('Tidak bisa terhubung ke server. Periksa internet.');
+    })
+    .then(function (x) { clearTimeout(timer); return x; }, function (e) { clearTimeout(timer); throw e; });
+}
+
+function setBusy(b) { busy = b; document.body.classList.toggle('busy', b); }
+
+// Suara: nada naik = berhasil, nada rendah = gagal / salah alur
+function beep(ok) {
+  try {
+    audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+    var t = audio.currentTime;
+    (ok ? [[880, 0], [1175, 0.13]] : [[220, 0], [160, 0.22]]).forEach(function (n) {
+      var o = audio.createOscillator(), g = audio.createGain();
+      o.type = ok ? 'sine' : 'square'; o.frequency.value = n[0]; g.gain.value = 0.2;
+      o.connect(g); g.connect(audio.destination);
+      o.start(t + n[1]); o.stop(t + n[1] + 0.16);
+    });
+  } catch (e) {}
+}
+
+function tampil(r) {
+  var el = $('hasil');
+  el.className = r.type;
+  var info = r.nama ? '<div class="info">' + esc(r.nama) + '<br>' + esc([r.sesi, r.ruang].filter(Boolean).join(' · ')) + '</div>' : '';
+  el.innerHTML = '<div class="ic">' + ICON[r.type] + '</div><h2>' + esc(r.title) + '</h2><p>' + esc(r.message) + '</p>' + info;
+  beep(r.type === 'success');
+  if (navigator.vibrate) navigator.vibrate(r.type === 'success' ? 80 : [120, 60, 120]);
+}
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]; }); }
+
+function masuk() {
+  if (busy) return;
+  user = $('user').value.trim().toLowerCase();
+  pin = $('pin').value;
+  if (!user || !pin) return;
+  beep(true); // membuka izin suara di HP
+  izin = izinKamera(); // minta izin kamera langsung dari ketukan tombol (wajib untuk beberapa browser HP)
+  setBusy(true);
+  panggil('login', {user: user, pin: pin}).then(function (a) {
+    setBusy(false); $('login').hidden = true; $('app').hidden = false;
+    document.querySelector('.tabs').hidden = true; // pos dikunci sesuai akun
+    pilihPos(a.pos);
+    (izin || Promise.resolve('')).then(function (err) { if (err) kameraGagal(err); else mulaiKamera(); });
+  }, function (e) {
+    setBusy(false); $('loginErr').hidden = false; $('loginErr').textContent = pesan(e);
+  });
+}
+
+function pilihPos(n) {
+  pos = n; hasil = ''; tutupForm();
+  document.querySelectorAll('.tab').forEach(function (b) { b.setAttribute('aria-pressed', Number(b.dataset.pos) === n); });
+  document.querySelectorAll('.opt').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+  $('choice').hidden = n !== 2;
+  $('desc').textContent = POS[n][1];
+  $('posNama').textContent = 'Pos ' + n + ' · ' + POS[n][0];
+  $('hasil').className = 'idle';
+  $('hasil').innerHTML = '<div class="ic">📷</div><h2>Siap memindai</h2><p>Arahkan kamera ke QR peserta.</p>';
+}
+
+function kirim(raw) {
+  var id = String(raw || '').trim();
+  if (busy || formId || !id) return;
+  if (pos === 2 && !hasil) { tampil({type: 'warning', title: 'Pilih hasil dulu', message: 'Tekan Normal atau Bermasalah sebelum scan.'}); return; }
+  setBusy(true);
+  panggil('scan', {user: user, pin: pin, id: id, data: hasil}).then(function (r) {
+    setBusy(false); $('manual').value = ''; if (r.type === 'form') bukaForm(r, id); else tampil(r);
+  }, function (e) { setBusy(false); tampil({type: 'error', title: 'Gagal terhubung', message: pesan(e) + ' Coba lagi.'}); });
+}
+
+// Scan yang sama dalam 4 detik diabaikan (anti scan ganda)
+function onScan(text) {
+  if (busy || formId) return;
+  if (text === lastId && Date.now() - lastAt < 4000) return;
+  lastId = text; lastAt = Date.now();
+  kirim(text);
+}
+
+async function mulaiKamera() {
+  try {
+    var cams = await Html5Qrcode.getCameras();
+    $('cam').insertAdjacentHTML('beforeend', cams.map(function (c, i) {
+      return '<option value="' + esc(c.id) + '">' + (i === 0 ? 'Kamera Utama: ' : '') + esc(c.label || 'Kamera ' + (i + 1)) + '</option>';
+    }).join(''));
+  } catch (e) {}
+  gantiKamera();
+}
+
+async function gantiKamera() {
+  if (typeof Html5Qrcode === 'undefined') { kameraGagal('Pustaka pemindai tidak termuat. Periksa koneksi internet lalu muat ulang halaman.'); return; }
+  if (!qr) qr = new Html5Qrcode('reader');
+  try { await qr.stop(); } catch (e) {}
+  var v = $('cam').value;
+  try {
+    await qr.start(v === 'environment' || v === 'user' ? {facingMode: v} : v,
+      {fps: 10, qrbox: {width: 240, height: 240}}, onScan, function () {});
+    $('btnKamera').hidden = true;
+  } catch (e) {
+    alasanKameraAsync(e).then(kameraGagal);
+  }
+}
+
+// Minta izin kamera. Hasil: '' jika berhasil, atau teks alasan jika gagal.
+function izinKamera() {
+  var md = navigator.mediaDevices;
+  if (!md || !md.getUserMedia) return Promise.resolve('Browser ini tidak mendukung kamera. Buka link di Chrome atau Safari, bukan dari dalam aplikasi lain (WhatsApp, Instagram, dll.).');
+  return md.getUserMedia({video: {facingMode: 'environment'}}).then(function (s) {
+    s.getTracks().forEach(function (t) { t.stop(); });
+    return '';
+  }, function (e) { return alasanKameraAsync(e); });
+}
+
+function alasanKamera(e) {
+  var s = String((e && (e.name ? e.name + ' ' + (e.message || '') : e.message)) || e || '').trim();
+  var kode = ' [' + s.slice(0, 70) + ']'; // kode asli dari browser, supaya penyebab pasti bisa dilihat
+  if (/NotAllowed|Permission|denied/i.test(s)) return 'Kamera diblokir. Tekan "Buka kamera" untuk meminta izin lagi. Jika tidak ada permintaan izin yang muncul, buka Pengaturan Chrome > Setelan situs > Kamera, lalu izinkan script.google.com.' + kode;
+  if (/NotFound|Overconstrained|no camera|device not found/i.test(s)) return 'Kamera tidak ditemukan di perangkat ini. Pakai HP, atau ketik ID manual.' + kode;
+  if (/NotReadable|TrackStart|in use|Could not start/i.test(s)) return 'Kamera sedang dipakai aplikasi lain. Tutup aplikasi itu lalu tekan "Buka kamera".' + kode;
+  if (/Security|insecure|https/i.test(s)) return 'Browser memblokir kamera di halaman ini. Buka link langsung di Chrome atau Safari, bukan di dalam aplikasi lain.' + kode;
+  return 'Kamera gagal dibuka. Tekan "Buka kamera" untuk mencoba lagi.' + kode;
+}
+
+function kameraGagal(teks) {
+  tampil({type: 'error', title: 'Kamera tidak bisa dibuka', message: teks});
+  $('btnKamera').hidden = false;
+}
+
+// Cari tahu SIAPA yang memblokir kamera: kebijakan halaman (Apps Script) atau pengaturan Chrome
+function diagnosaIzin() {
+  try {
+    var pp = document.permissionsPolicy || document.featurePolicy;
+    if (pp && pp.allowsFeature && !pp.allowsFeature('camera')) return Promise.resolve('policy');
+  } catch (e) {}
+  if (navigator.permissions && navigator.permissions.query) {
+    return navigator.permissions.query({name: 'camera'}).then(function (r) { return r.state; }, function () { return ''; });
+  }
+  return Promise.resolve('');
+}
+
+function alasanKameraAsync(e) {
+  var s = String((e && (e.name ? e.name + ' ' + (e.message || '') : e.message)) || e || '').trim();
+  if (!/NotAllowed|Permission|denied/i.test(s)) return Promise.resolve(alasanKamera(e));
+  return diagnosaIzin().then(function (st) {
+    var kode = ' [' + s.slice(0, 60) + (st ? ' / ' + st : '') + ']';
+    if (st === 'policy') return 'Halaman Apps Script ini tidak diizinkan memakai kamera. Ini tidak bisa diperbaiki dari pengaturan HP.' + kode;
+    if (st === 'denied') return 'Kamera diblokir untuk situs ini di Chrome. Ketuk ikon di kiri alamat > Izin > Kamera > Izinkan, lalu kembali ke halaman ini.' + kode;
+    return 'Izin kamera belum diberikan. Tekan "Buka kamera", lalu pilih Izinkan.' + kode;
+  });
+}
+
+$('btnLogin').onclick = masuk;
+$('btnLihat').onclick = function () { var i = $('pin'), t = i.type === 'password'; i.type = t ? 'text' : 'password'; this.textContent = t ? 'Sembunyikan' : 'Lihat'; };
+$('pin').onkeydown = function (e) { if (e.key === 'Enter') masuk(); };
+$('btnKeluar').onclick = function () { location.reload(); };
+document.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { if (!busy) pilihPos(Number(b.dataset.pos)); }; });
+document.querySelectorAll('.opt').forEach(function (b) {
+  b.onclick = function () {
+    if (busy) return;
+    hasil = b.dataset.v;
+    document.querySelectorAll('.opt').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+  };
+});
+function bukaForm(r, id) {
+  formId = id;
+  $('formNama').textContent = r.nama + ' · ' + r.sesi;
+  ['hk', 'nk', 'hl', 'nl'].forEach(function (k) { $(k).value = ''; });
+  $('form').hidden = false;
+  $('hasil').className = 'idle';
+  $('hasil').innerHTML = '<div class="ic">👁</div><h2>Isi hasil refraksi</h2><p>Satu mata saja yang bermasalah? Mata lainnya pilih Normal.</p>';
+  beep(true);
+  $('form').scrollIntoView({behavior: 'smooth'});
+}
+function tutupForm() { formId = ''; $('form').hidden = true; }
+function simpan() {
+  if (busy || !formId) return;
+  var data = {kanan: {hasil: $('hk').value, nilai: $('nk').value}, kiri: {hasil: $('hl').value, nilai: $('nl').value}};
+  setBusy(true);
+  panggil('scan', {user: user, pin: pin, id: formId, data: data}).then(function (r) {
+    setBusy(false); if (r.type === 'success') tutupForm(); tampil(r);
+  }, function (e) { setBusy(false); tampil({type: 'error', title: 'Gagal terhubung', message: pesan(e) + ' Coba lagi.'}); });
+}
+$('btnSimpan').onclick = simpan;
+$('btnBatal').onclick = function () { tutupForm(); pilihPos(3); };
+$('cam').onchange = gantiKamera;
+$('btnKamera').onclick = function () { izinKamera().then(function (err) { if (err) kameraGagal(err); else gantiKamera(); }); };
+// Kembali ke halaman ini (misalnya setelah mengubah izin di pengaturan) -> coba nyalakan kamera lagi otomatis
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden || $('app').hidden || $('btnKamera').hidden) return;
+  izinKamera().then(function (err) { if (!err) gantiKamera(); });
+});
+$('btnManual').onclick = function () { kirim($('manual').value); };
+$('manual').onkeydown = function (e) { if (e.key === 'Enter') kirim($('manual').value); };
+</script>
+</body>
+</html>
